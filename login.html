@@ -36,17 +36,24 @@
     $('#enviar').click(function(){
         let dados= {
             email: $("#email").val(),
-            senha: $("#senha").val()
+            password: $("#senha").val()
         }
-     
+     console.log(JSON.stringify(dados))
         $.ajax({
-            url:'127.0.01:8080',
-            method:'POST',
+            url:'http://127.0.0.1:8081/auth/authenticate',
+            method:'post',
+            dataType:'JSON',
+            contentType:false,
+            processData:false,
             data:JSON.stringify(dados),
             success:function(resposta){
             $("form").trigger("reset")        
             window.alert(resposta)
+            },
+            error:function(resposta){
+                window.alert(resposta)
             }
+
         })
     })
 })
