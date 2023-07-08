@@ -31,27 +31,30 @@
 </body>
 </html>
 <script>
-       
+       //salvar no local storage o id e o token
  $(document).ready(function(){
     $('#enviar').click(function(){
         let dados= {
             email: $("#email").val(),
             password: $("#senha").val()
         }
-     console.log(JSON.stringify(dados))
         $.ajax({
             url:'http://127.0.0.1:8081/auth/authenticate',
             method:'post',
             dataType:'JSON',
-            contentType:false,
+            contentType:'application/json',
             processData:false,
             data:JSON.stringify(dados),
             success:function(resposta){
-            $("form").trigger("reset")        
-            window.alert(resposta)
+                $("form").trigger("reset")        
+                window.alert(JSON.stringify(resposta))
+
+                localStorage.email=JSON.parse(resposta).email
+                window.location.href=""
             },
             error:function(resposta){
-                window.alert(resposta)
+                $("form").trigger("reset")  
+                window.alert("Informações de login incorretas")
             }
 
         })
