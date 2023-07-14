@@ -39,18 +39,18 @@
             password: $("#senha").val()
         }
         $.ajax({
-            url:'http://127.0.0.1:8081/auth/authenticate',
+            url:'http://127.0.0.1:8080/auth/authenticate',
             method:'post',
             dataType:'JSON',
             contentType:'application/json',
             processData:false,
             data:JSON.stringify(dados),
             success:function(resposta){
-                $("form").trigger("reset")        
-                window.alert(JSON.stringify(resposta))
-
-                localStorage.email=JSON.parse(resposta).email
-                window.location.href=""
+                $("form").trigger("reset")
+                console.log(JSON.stringify(resposta))
+                window.location.href="index.html"
+                localStorage.setItem("id",resposta.id )
+                localStorage.setItem("token",resposta.token )
             },
             error:function(resposta){
                 $("form").trigger("reset")  
