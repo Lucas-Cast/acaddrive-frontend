@@ -6,11 +6,11 @@ body{
     overflow-x: hidden;
 }
 
-a{
+a, .nav-list label{
    color: #fff;
    text-decoration:none; 
 }
-a:hover{
+a:hover ,.nav-list label:hover{
     opacity: 0.7;
     
 }
@@ -37,13 +37,14 @@ nav {
     width:25vw;
     height:92vh;
     background:#23232e;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row;
+    align-items: flex-start;
     justify-content: space-around;
     transform: translateX(100%);
     transition: transform 0.3s ease-in;
 }
 .nav-list li{
+    margin-top: 10px;
     letter-spacing:3px;
     margin-left:0px;
     opacity: 1;
