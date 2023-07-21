@@ -23,9 +23,9 @@ input.addEventListener("change", function(){
 const download= function(){
     const a = document.createElement('a')
     a.style="display:none;"
-    document.body.main.appendChild(a)
+    document.body.appendChild(a)
     return function(conteudo,nomeArquivo){
-        const blob= new Blob([conteudo], {type:"octet/stream"})
+        const blob= new Blob([conteudo], { type: "octet/stream" })
         const url = window.URL.createObjectURL(blob)
         a.href=url 
         a.download=nomeArquivo
@@ -35,5 +35,5 @@ const download= function(){
 }
 
 btnDownload.addEventListener("click", function(){
-    download()(preview.value,nomeArquivo)
+    download()(preview.value,arquivoAberto.innerHTML)
 })
