@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Acaddrive</title>
     <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/formatacaoArquivos.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 </head>
 <body style="background-color: black;">
@@ -18,8 +19,10 @@
                  
             </div>
             <ul class="nav-list">
-            <li><label id="arquivoAberto">Arquivo teste</label></li>
-            <li><label><i class="bi bi-folder-plus" title="Adicionar pasta" style="cursor: pointer;"></i></label></li>
+            <li><label id="arquivoAberto"></label></li>
+            <li><label for="pasta"><i class="bi bi-folder-plus" title="Adicionar pasta" 
+                style="cursor: pointer;"></i></label>
+                <input type="button" name="pasta" id="pasta" style="display: none;"></li>
             <li><label for="arquivo"><i class="bi bi-file-earmark-plus" title="Adicionar arquivo" 
                 style="cursor: pointer;"></i></label>
                 <input type="file" name="arquivo" id="arquivo" style="display: none;"></li>
@@ -29,8 +32,10 @@
     <main>
         <textarea id="preview" rows="8" cols="50"></textarea>  
         <input type="button" id="download" value="baixar">
+        <div class="arquivosDisplay"id="arquivosDisplay" style="background: #fff;"></div>
     </main>   
         <script src="js/mobile-navbar.js"></script>
         <script src="js/upload.js"></script>
+        <script src="js/addPasta.js"></script>
 </body>
 </html>

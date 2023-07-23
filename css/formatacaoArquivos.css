@@ -1,0 +1,12 @@
+.arquivosDisplay{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+}
+ .arquivosDisplay div {
+    margin: 10px;
+    text-align: center;
+ }
+

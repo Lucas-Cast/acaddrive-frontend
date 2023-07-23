@@ -1,11 +1,13 @@
-const input = document.querySelector('#arquivo')
+const inputArqv = document.querySelector('#arquivo')
 const preview = document.querySelector('#preview')
 const btnDownload = document.querySelector('#download')
 const arquivoAberto = document.querySelector('#arquivoAberto')
 
-input.addEventListener("change", function(){
+
+//Input arquivo e download arquivo 
+
+inputArqv.addEventListener("change", function(){
     const arquivo= this.files[0]
-    console.log(this.files)
     const nomeArquivo = this.files[0].name
     arquivoAberto.innerHTML=`${nomeArquivo}`
     const leitor = new FileReader()
@@ -37,3 +39,4 @@ const download= function(){
 btnDownload.addEventListener("click", function(){
     download()(preview.value,arquivoAberto.innerHTML)
 })
+
