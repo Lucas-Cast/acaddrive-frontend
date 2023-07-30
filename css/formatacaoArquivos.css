@@ -9,4 +9,7 @@
     margin: 10px;
     text-align: center;
  }
+ .arquivosDisplay div #excluirPasta,#renomearPasta {
+    cursor: pointer;
+ }
 
